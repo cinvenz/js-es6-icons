@@ -1,4 +1,6 @@
 const containerIcons = document.querySelector('.container-icons')
+const eleSelect = document.getElementById('type')
+
 
 const arrIcons = [
 	{
@@ -115,9 +117,47 @@ const arrIcons = [
 	}
 ];
 
-arrIcons.forEach((ele, i) => {
-    const eleIcon = document.createElement('div');
-    eleIcon.classList.add('icon');
-    containerIcons.append(eleIcon);
-    eleIcon.innerHTML += `<i class="${arrIcons[i].family} ${arrIcons[i].prefix}${arrIcons[i].name}"></i><p>${arrIcons[i].name}</p>`;
-});
+eleSelect.innerHTML += `<option value="animal">animal</option><option value="vegetable">vegetable</option><option value="user">user</option>`
+
+
+switch (eleSelect.value) {
+    case 'all':
+        arrIcons.forEach((ele, i) => {
+            const eleIcon = document.createElement('div');
+            eleIcon.classList.add('icon');
+            eleIcon.classList.add('rounded-3');
+            eleIcon.classList.add('shadow');
+            eleIcon.style.color=`${arrIcons[i].color}`
+            containerIcons.append(eleIcon);
+            eleIcon.innerHTML += `<i class="fs-3 ${arrIcons[i].family} ${arrIcons[i].prefix}${arrIcons[i].name}"></i><p class="text-uppercase">${arrIcons[i].name}</p>`;
+        
+        })
+      break;
+    case 'animal':
+        arrIcons.forEach((ele, i) => {
+            const eleIcon = document.createElement('div');
+            eleIcon.classList.add('icon');
+            eleIcon.classList.add('rounded-3');
+            eleIcon.classList.add('shadow');
+            eleIcon.style.color=`${arrIcons[i].color}`
+            containerIcons.append(eleIcon);
+            eleIcon.innerHTML += `<i class="fs-3  ${arrIcons[i].prefix}${arrIcons[i].name}">`;
+        
+        })
+      break;
+    case 'vegetable':
+        arrIcons.forEach((ele, i) => {
+            const eleIcon = document.createElement('div');
+            eleIcon.classList.add('icon');
+            eleIcon.classList.add('rounded-3');
+            eleIcon.classList.add('shadow');
+            eleIcon.style.color=`${arrIcons[i].color}`
+            containerIcons.append(eleIcon);
+            eleIcon.innerHTML += `<i class="fs-3 ${arrIcons[i].family} ${arrIcons[i].prefix}${arrIcons[i].name}">`;
+        
+        })
+      break;
+    case 'user':
+      day = "Wednesday";
+      break;
+}
