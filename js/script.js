@@ -134,17 +134,18 @@ eleSelect.addEventListener('change', () => {
 	containerIcons.innerHTML = ''
     switch (eleSelect.value) {
 		case 'all':
-            for (let i = 1; i < 8; i++) {
-                const eleIcon = document.createElement('div');
-                eleIcon.classList.add('icon');
-                eleIcon.classList.add('rounded-3');
-                eleIcon.classList.add('shadow');
-                eleIcon.style.color=`${arrIcons[i].color}`
-                containerIcons.append(eleIcon);
-                eleIcon.innerHTML += `<i class="fs-3 ${arrIcons[i].family} ${arrIcons[i].prefix}${arrIcons[i].name}"></i><p class="text-uppercase">${arrIcons[i].name}</p>`;
+            for (let i = 1; i < 16; i++) {
+				const eleIcon = document.createElement('div');
+				eleIcon.classList.add('icon');
+				eleIcon.classList.add('rounded-3');
+				eleIcon.classList.add('shadow');
+				eleIcon.style.color=`${arrIcons[i].color}`
+				containerIcons.append(eleIcon);
+				eleIcon.innerHTML += `<i class="fs-3 ${arrIcons[i].family} ${arrIcons[i].prefix}${arrIcons[i].name}"></i><p class="text-uppercase">${arrIcons[i].name}</p>`;
             
             }
-        case 'animal':
+		break;
+		case 'animal':
             for (let i = 1; i < 8; i++) {
                 const eleIcon = document.createElement('div');
                 eleIcon.classList.add('icon');
